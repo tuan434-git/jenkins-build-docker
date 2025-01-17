@@ -7,7 +7,7 @@ node {
       app = docker.build("tuan/nginx")
     }
     stage('Run image') {
-      docker.image('tuan/nginx').withRun(' -p 80:80 ) { c ->
+      docker.image('tuan/nginx').withRun(' -p 80:80 ' ) { c ->
       sh 'docker ps'
       sh 'curl localhost'
     }
